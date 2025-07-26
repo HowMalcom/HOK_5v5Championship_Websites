@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro');
+
+*{
+margin: 0;
+padding:0;
+box-sizing: border-box;
+font-family:'Poppins', sans-serif;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 20px 100px;
+    background: rebeccapurple;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.header .logo{
+    font-size: 1.7em;
+    color: #fff;
+    text-decoration: none;
+
+}
