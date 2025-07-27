@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites With SignUp Pages HOK_5v5Championship</title>
+    <link rel="stylesheet" href="HOKLogInRegister.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+
+<body>
+    <section class="SignUpPage">
+        <div class="contentSignUpPage">
+             <h2>Honor Of Kings</h2>
+             <p>Welcome to our websites. At our websites you can know about HOK_5v5Championship</p>
+        </div>
+
+        <div class="container" id="signup">
+            <h2>Member Sign Up</h2>
+            <form method="post" action="">
+                <div id="signUpMessage" class="messageDiv" style="display:none"></div>
+                <div class="input-block">
+                    <span class="icon">
+                    <ion-icon name="document-text"></ion-icon></span>
+                     <i class="fas fa-user"></i>
+                     <input type="text" id="fName" required>
+                     <label for="fName">First Name</label>
+                </div>
+                <div class="input-block">
+                    <span class="icon">
+                    <ion-icon name="document-text"></ion-icon></span>
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="lName" required>
+                    <label for="lName">Last Name</label>
+                </div>
+                <div class="input-block">
+                    <span class="icon">
+                    <ion-icon name="mail"></ion-icon></span>
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="rEmail" required>
+                    <label for="rEmail">Enter your email</label>
+                </div>
+                <div class="input-block">
+                    <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon></span>
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="rPassword" required>
+                    <label for="rPassword">Enter your password</label>
+                </div>
+                <button type="submit" class="btn" id="submitSignUp" >Sign Up</button>
+            </form>
+
+            <div class="links">
+               <p>Already Have An Account?</p>
+               <button id="signInButton">Sign In</button>
+            </div>
+        </div>
+    </section>
+    <div class="container" id="signIn">
+        <h2>Member Login</h2>
+        <form method="post" action="">
+            <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+                <div class="input-block">
+                    <span class="icon">
+                    <ion-icon name="mail"></ion-icon></span>
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" required>
+                    <label for="email">Enter your email</label>
+                </div>
+                <div class="input-block">
+                    <span class="icon">
+                    <ion-icon name="lock-closed"></ion-icon></span>
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" required>
+                    <label for="password">Enter your password</label>
+                </div>
+                <button type="submit" class="btn" id="submitLogIn">LogIn</button>
+            </form>
+        </div>
+
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
