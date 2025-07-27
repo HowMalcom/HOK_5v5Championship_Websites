@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honor of Kings - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0f35, #1a1a4a, #0f0f35);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(10, 10, 42, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner {
+            position: relative;
+            height: 300px;
+            background: url('https://game.gtimg.cn/images/yxzj/coming/v2/skins//image/20231226/17035795442119.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(15, 15, 53, 0.7), rgba(10, 10, 42, 0.9));
+            z-index: -1;
+        }
+
+        .banner h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .content-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            padding: 40px;
+            flex: 1;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #c4f0fb;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 40px 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #a0d2eb;
+            font-size: 1rem;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #c4f0fb;
+        }
+
+        .input-field {
+            position: relative;
+        }
+
+        .input-field i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4dccff;
+            font-size: 18px;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 14px 20px 14px 50px;
+            border: 2px solid rgba(196, 240, 251, 0.3);
+            border-radius: 12px;
+            background: rgba(10, 10, 42, 0.7);
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .input-field input:focus {
+            outline: none;
+            border-color: #4dccff;
+            box-shadow: 0 0 15px rgba(77, 204, 255, 0.3);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+        }
+
+        .remember input {
+            margin-right: 8px;
+            accent-color: #4dccff;
+        }
+
+        .forgot-password {
+            color: #4dccff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #0f0f35, #2a9fd6);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-btn:hover {
+            background: linear-gradient(90deg, #2a9fd6, #0f0f35);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 25px;
+            color: #a0d2eb;
+            font-size: 16px;
+        }
+
+        .signup-link a {
+            color: #4dccff;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature {
+            text-align: center;
+            padding: 20px;
+            width: 30%;
+            min-width: 250px;
+        }
+
+        .feature i {
+            font-size: 2.5rem;
+            color: #4dccff;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #c4f0fb;
+        }
+
+        .feature p {
+            font-size: 0.95rem;
+            color: #a0d2eb;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px;
+            color: #a0d2eb;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive design */
+        @media (min-width: 768px) {
+            .banner {
+                height: 400px;
+            }
+
+            .banner h1 {
+                font-size: 3.5rem;
+            }
+
+            .content-area {
+                flex-direction: row;
+            }
+
+            .content {
+                padding: 50px;
+            }
+
+            .login-container {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .banner h1 {
+                font-size: 2.2rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+
+        .content h2 {
+                font-size: 2rem;
+            }
+
+            .login-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .feature {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner {
+                height: 250px;
+                padding: 20px;
+            }
+
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .login-container {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1>HONOR OF KINGS</h1>
+            <p>Welcome to our official website. Discover everything about the HOK_5v5Championship tournament and more!</p>
+        </div>
+
+        <div class="content-area">
+            <div class="content">
+                <h2>THE ULTIMATE MOBA EXPERIENCE</h2>
+                <p>Join millions of players worldwide in the most popular mobile MOBA game. Compete in intense 5v5 battles, master unique heroes, and climb the ranks to become a legend.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Tournaments</h3>
+                        <p>Compete in global championships with massive prize pools</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <h3>Community</h3>
+                        <p>Join our 100M+ player community worldwide</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Regular Updates</h3>
+                        <p>New heroes, skins and events every month</p>
+                    </div>
