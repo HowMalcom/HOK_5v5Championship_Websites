@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" >
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 添加响应式视口标签 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Honor Of Kings</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: #0a0a2a;
+        }
+
+        .home {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: url('https://game.gtimg.cn/images/yxzj/coming/v2/skins//image/20231226/17035795442119.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+        }
+
+        .content {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .content h2 {
+            font-size: 2.2rem;
+            letter-spacing: 0.01em;
+            margin-top: 20px;
+        }
+
+        .content p {
+            margin: 15px 0 25px;
+            font-size: 1rem;
+        }
+
+        .wrapper-login {
+            width: 100%;
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 25px;
+            background: rgba(10, 10, 42, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .wrapper-login h2 {
+            font-size: 1.8rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .input-block {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .input-block input {
+            width: 100%;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            outline: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            color: white;
+            padding: 0 20px 0 50px;
+            transition: all 0.3s;
+        }
+
+        .input-block input:focus {
+            border-color: #c4f0fb;
+            background: rgba(196, 240, 251, 0.1);
+        }
+
+        .input-block label {
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            pointer-events: none;
+            transition: all 0.3s;
+        }
+
+        .input-block .icon {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .input-block input:focus ~ label,
+        .input-block input:not(:placeholder-shown) ~ label {
+            font-size: 0.8rem;
+            top: 0;
+            left: 20px;
+            background: #0a0a2a;
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: #c4f0fb;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .remember-forgot label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .remember-forgot a {
+            color: #c4f0fb;
+            text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #0f0f35, #2a9fd6);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .register-link {
+            text-align: center;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .register-link a {
+            color: #4dccff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* 媒体查询：平板和手机 */
+        @media (min-width: 768px) {
+            .home {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                padding: 40px;
+            }
+
+            .content {
+                text-align: left;
+                max-width: 500px;
+                margin-bottom: 0;
+                padding: 0;
+            }
+
+            .content h2 {
+                font-size: 3rem;
+            }
+
+            .wrapper-login {
+                width: 440px;
+                margin: 0;
+            }
+        }
+
+        /* 小屏幕手机优化 */
+        @media (max-width: 480px) {
+            .home {
+                padding: 15px;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+            }
+
+            .wrapper-login {
+                padding: 20px;
+            }
+
+            .wrapper-login h2 {
+                font-size: 1.5rem;
+            }
+
+            .remember-forgot {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+        <section class="home">
+        <div class="content">
+             <h2>Honor Of Kings</h2>
+             <p>Welcome to our websites. At our websites you can know about HOK_5v5Championship</p>
+        </div>
+
+        <div class="wrapper-login">
+            <h2>Member Login</h2>
+            <form action="#">
+                <div class="input-block">
+                    <span class="icon">
+                        <ion-icon name="mail"></ion-icon></span>
+                    <input type="password" required>
+
+                    <label>Enter your account</label>
+                </div>
+                <div class="input-block">
+                    <span class="icon">
+                        <ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Enter your password</label>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Do not have an account ?<a href="HOKRegister.html" target ='Sign up now'>Sign up now</a></p>
+                </div>
+
+            </form>
+        </div>
+        </section>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
